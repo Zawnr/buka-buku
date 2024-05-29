@@ -42,7 +42,7 @@ public class SignInActivity extends AppCompatActivity {
 
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPassw = (EditText) findViewById(R.id.etPassw);
-        btSignin = (Button) findViewById(R.id.btSignin);
+        btSignin = (Button) findViewById(R.id.btSignIn);
         cAuth = FirebaseAuth.getInstance();
 
         btSignin.setOnClickListener(new View.OnClickListener() {

@@ -36,10 +36,10 @@
         android:layout_marginVertical="56dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btSignUp" />
+        app:layout_constraintBottom_toTopOf="@+id/btSignIn" />
 
     <Button
-        android:id="@+id/btSignUp"
+        android:id="@+id/btSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
