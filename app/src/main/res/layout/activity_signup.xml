@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/authbg"
+    android:paddingHorizontal="0dp"
+    tools:context=".SignInActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/header"
+        android:text="Create an Account!"
+        android:textColor="@color/secondary"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/lbUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/body"
+        android:labelFor="@+id/etUsername"
+        android:text="Username"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/etUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:fontFamily="@font/body"
+        android:hint="e.g example28"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/secondary"
+        android:textColorHint="#99EFE3C8"
+        app:layout_constraintBottom_toTopOf="@+id/lbEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lbEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/body"
+        android:labelFor="@+id/etEmail"
+        android:text="Email"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintEnd_toEndOf="@+id/etUsername"
+        app:layout_constraintStart_toStartOf="@+id/etUsername" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:fontFamily="@font/body"
+        android:hint="e.g example28@gmail.com"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/secondary"
+        android:textColorHint="#99EFE3C8"
+        app:layout_constraintBottom_toTopOf="@+id/lbPassw"
+        app:layout_constraintEnd_toEndOf="@+id/lbEmail"
+        app:layout_constraintStart_toStartOf="@+id/lbEmail" />
+
+    <TextView
+        android:id="@+id/lbPassw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/body"
+        android:labelFor="@+id/etPassw"
+        android:text="Password"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/etPassw"
+        app:layout_constraintEnd_toEndOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="@+id/etEmail" />
+
+    <EditText
+        android:id="@+id/etPassw"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/lbConfPassw"
+        app:layout_constraintEnd_toEndOf="@+id/lbPassw"
+        app:layout_constraintStart_toStartOf="@+id/lbPassw" />
+
+    <TextView
+        android:id="@+id/lbConfPassw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/body"
+        android:labelFor="@+id/etConfPassw"
+        android:text="Confirm Password"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/etConfPassw"
+        app:layout_constraintEnd_toEndOf="@+id/etPassw"
+        app:layout_constraintStart_toStartOf="@+id/etPassw" />
+
+    <EditText
+        android:id="@+id/etConfPassw"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginVertical="56dp"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/btSignUp"
+        app:layout_constraintEnd_toEndOf="@+id/lbConfPassw"
+        app:layout_constraintStart_toStartOf="@+id/lbConfPassw" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/body"
+        android:text="Create Account"
+        android:textAllCaps="false"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btGoogle"
+        app:layout_constraintEnd_toEndOf="@+id/btGoogle"
+        app:layout_constraintStart_toStartOf="@+id/btGoogle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/button_secondary"
+        android:fontFamily="@font/body"
+        android:text="SignUp with Google"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txSignIn"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:fontFamily="@font/body"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btGoogle"
+        app:layout_constraintStart_toStartOf="@+id/btGoogle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
