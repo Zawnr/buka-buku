@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".wishlist.WishlistActivity">
+    tools:context=".WishlistActivity">
 
     <LinearLayout
         android:id="@+id/layoutHeader"
@@ -18,23 +18,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingStart="20dp"
+            android:paddingStart="24dp"
             android:paddingBottom="16dp"
-            android:paddingTop="15dp">
+            android:paddingTop="16dp">
 
             <ImageButton
                 android:id="@+id/btn_back"
-                android:layout_width="34dp"
-                android:layout_height="33dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:background="@drawable/ic_back"
-                android:textAllCaps="false"
-                android:contentDescription="@string/back_button"/>
+                android:contentDescription="@string/back_button"
+                android:textAllCaps="false" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wishlist"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/header"
                 android:textColor="@color/text"
@@ -45,7 +45,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#DDDDDD" />
+            android:background="@color/primary" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
