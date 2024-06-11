@@ -4,10 +4,12 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +29,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPassw;
     private Button btSignin;
+    private TextView txSignup;
     private FirebaseAuth cAuth;
 
     @Override
@@ -43,12 +46,24 @@ public class SignInActivity extends AppCompatActivity {
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPassw = (EditText) findViewById(R.id.etPassw);
         btSignin = (Button) findViewById(R.id.btSignIn);
+        txSignup = (TextView) findViewById(R.id.txSignUp);
         cAuth = FirebaseAuth.getInstance();
 
         btSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!validateForm()) {
+                    return;
+                }
                 signinUser(etEmail.getText().toString(), etPassw.getText().toString());
+            }
+        });
+
+        txSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -67,6 +82,26 @@ public class SignInActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Please SignIn First!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private boolean validateForm() {
+        boolean result = true;
+
+        if (TextUtils.isEmpty(etEmail.getText().toString())) {
+            etEmail.setError("Required");
+            result = false;
+        } else {
+            etEmail.setError(null);
+        }
+
+        if (TextUtils.isEmpty(etPassw.getText().toString())) {
+            etPassw.setError("Required");
+            result = false;
+        } else {
+            etPassw.setError(null);
+        }
+
+        return result;
     }
 
     private void signinUser(String email, String password) {

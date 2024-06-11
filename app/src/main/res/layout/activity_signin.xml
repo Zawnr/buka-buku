@@ -5,63 +5,127 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="24dp"
+    android:background="@drawable/authbg"
     tools:context=".SignInActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/header"
         android:text="Hello, Welcome Back!"
+        android:textColor="@color/secondary"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/lbEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/lbEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/body"
+        android:labelFor="@+id/etUsername"
+        android:text="Email"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginVertical="16dp"
+        android:paddingHorizontal="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/input"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/lbPassw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lbPassw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/body"
+        android:labelFor="@+id/etUsername"
+        android:text="Password"
+        android:textColor="@color/secondary"
         app:layout_constraintBottom_toTopOf="@+id/etPassw"
-        tools:layout_editor_absoluteX="24dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etPassw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:paddingHorizontal="24dp"
         android:layout_marginVertical="56dp"
         android:ems="10"
+        android:background="@drawable/input"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btSignIn" />
+        android:textColor="@color/secondary"
+        app:layout_constraintBottom_toTopOf="@+id/btSignIn"
+        app:layout_constraintEnd_toEndOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="@+id/etEmail" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:fontFamily="@font/body"
         android:text="Sign In"
-        app:layout_constraintBottom_toTopOf="@+id/btGoogle" />
+        app:layout_constraintBottom_toTopOf="@+id/btGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btGoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_secondary"
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/body"
+        android:textAllCaps="false"
         android:text="Sign In with Google"
-        app:layout_constraintBottom_toTopOf="@+id/txSignUp" />
+        app:layout_constraintBottom_toTopOf="@+id/txSignUp"
+        app:layout_constraintEnd_toEndOf="@+id/btSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btSignIn" />
 
     <TextView
         android:id="@+id/txSignUp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="250dp"
-        android:text="Already have an account?"
+        android:layout_marginBottom="144dp"
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/body"
+        android:text="Dont have an account?"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="24dp" />
+        app:layout_constraintEnd_toEndOf="@+id/btGoogle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btGoogle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
