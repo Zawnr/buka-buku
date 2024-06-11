@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:id="@+id/main"
+    tools:context=".CheckoutActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_nav_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:elevation="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/primary"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_bg_btn_arrow"
+            android:contentDescription="TODO"
+            android:padding="5dp"
+            android:src="@drawable/arrow2"
+            tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/txt_co"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Out"
+            android:fontFamily="@font/header"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="26px"
+            android:layout_marginTop="4px"
+            app:layout_constraintStart_toEndOf="@+id/ic_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_profileco"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/bg_card_primary"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_nav_checkout"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="@color/primary">
+
+        <LinearLayout
+            android:id="@+id/linear_profile1"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@color/primary">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Name"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Email"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Student ID"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Phone Number"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_profile2"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:paddingTop="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:background="@color/primary">
+
+            <TextView
+                android:id="@+id/in_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Name"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/in_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Email"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/in_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Student ID"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/in_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Phone Number"
+                android:fontFamily="@font/body"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_submit_form"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/button"
+        android:text="Submit Form"
+        android:textAllCaps="false"
+        android:textColor="@color/primary"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="465dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="55dp"
+        android:contentDescription="List Checkout"
+        app:layout_constraintBottom_toTopOf="@+id/btn_submit_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_profileco"
+        app:layout_constraintVertical_bias="0.351"
+        tools:listitem="@layout/list_checkout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
