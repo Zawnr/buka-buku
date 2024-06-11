@@ -3,4 +3,7 @@
     <string name="book_name">PACHINKO</string>
     <string name="book_genre">Cuento • Novela • Romance</string>
     <string name="book_author">Min Jin Lee</string>
+    <string name="remove_book">Remove book</string>
+    <string name="back_button">Go Back</string>
+    <string name="checkout_button">Proceed to Checkout</string>
 </resources>
