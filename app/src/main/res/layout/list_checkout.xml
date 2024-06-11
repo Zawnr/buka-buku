@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_bookco"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/bg_card_primary"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:id="@+id/layout_detailbookco"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_card_primary"
+            android:elevation="80dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ic_cover_checkout"
+                android:layout_width="92dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_books1"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="119dp"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_bookname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/book_name"
+                    android:fontFamily="@font/body"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_bookgenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/book_genre"
+                    android:fontFamily="@font/body"
+                    android:textColor="@color/text"/>
+
+                <TextView
+                    android:id="@+id/txt_bookauthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/book_author"
+                    android:fontFamily="@font/body"
+                    android:textColor="@color/text"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
