@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:id="@+id/main"
+    android:background="#1C161E">
+
+
+    <LinearLayout
+        android:id="@+id/layout_nav_book_detail"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:elevation="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/primary">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/primary"
+            android:padding="5dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/txt_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Buku"
+            android:fontFamily="@font/header"
+            android:textSize="28sp"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/secondary" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_nav_book_detail"
+        android:layout_above="@+id/layout_buttons"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/img_buku1" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:text="Pachinko"
+                android:fontFamily="@font/header"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/writer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Min Jin Lee"
+                android:fontFamily="@font/header"
+                android:textAlignment="center"
+                android:textColor="#EFE3C8"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating : 9.9"
+                android:fontFamily="@font/header"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cuento • Novela • Romance"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:fontFamily="@font/header"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="291dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:justificationMode="inter_word"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est pellentesque elit ullamcorper dignissim cras. Est placerat in egestas erat imperdiet sed euismod nisi. Quam adipiscing vitae proin sagittis. A lacus vestibulum sed arcu non odio euismod. Duis ultricies lacus sed turpis tincidunt. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Risus nullam eget felis eget. Posuere urna nec tincidunt praesent. Non curabitur gravida arcu ac tortor dignissim convallis. Viverra nibh cras pulvinar mattis nunc. Vitae semper quis lectus nulla at. Quam viverra orci sagittis eu volutpat odio. Ornare arcu odio ut sem. Magnis dis parturient montes nascetur ridiculus mus mauris vitae."
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/body"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bookmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button"
+            android:text="Bookmark"
+            android:textSize="16sp"
+            android:fontFamily="@font/body"
+            android:textColor="@color/primary" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_buy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/button_secondary"
+            android:textSize="16sp"
+            android:fontFamily="@font/body"
+            android:text="Buy"
+            android:textColor="@color/secondary" />
+    </LinearLayout>
+</RelativeLayout>
