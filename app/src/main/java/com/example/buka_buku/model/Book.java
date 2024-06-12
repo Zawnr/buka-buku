@@ -3,6 +3,7 @@ package com.example.buka_buku.model;
 import java.io.Serializable;
 
 public class Book implements Serializable {
+    private String key;
     private String title;
     private String author;
     private String genre;
@@ -47,5 +48,13 @@ public class Book implements Serializable {
 
     public void setCover(String cover) {
         this.cover = cover;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
