@@ -57,9 +57,9 @@ public class WishlistActivity extends AppCompatActivity {
 
     private void loadWishlistItems() {
         // Example data; replace with actual data retrieval logic
-        wishlistItems.add(new WishlistItem(false, R.drawable.ic_books1, "Book Title 1", "Genre 1", "Author 1"));
-        wishlistItems.add(new WishlistItem(false, R.drawable.ic_books1, "Book Title 2", "Genre 2", "Author 2"));
-        wishlistItems.add(new WishlistItem(false, R.drawable.ic_books1, "Book Title 3", "Genre 3", "Author 3"));
+        wishlistItems.add(new WishlistItem(false, R.drawable.ic_books2, "Book Title 1", "Genre 1", "Author 1"));
+        wishlistItems.add(new WishlistItem(false, R.drawable.ic_books2, "Book Title 2", "Genre 2", "Author 2"));
+        wishlistItems.add(new WishlistItem(false, R.drawable.ic_books2, "Book Title 3", "Genre 3", "Author 3"));
         wishlistAdapter.notifyDataSetChanged();
     }
 }

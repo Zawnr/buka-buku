@@ -1,6 +1,5 @@
 package com.example.buka_buku;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,28 +9,31 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.buka_buku.model.Book;
+
 import java.util.ArrayList;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Viewholder> {
-    Context context;
-    ArrayList<HomeModel> arrayList = new ArrayList<>();
-    public HomeAdapter(Context context, ArrayList<HomeModel> arrayList){
+    ArrayList<Book> arrayList;
+
+    public HomeAdapter(ArrayList<Book> arrayList){
         this.arrayList = arrayList;
-        this.context = context;
     }
+
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_home, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_list_home, parent, false);
         Viewholder viewholder = new Viewholder(view);
         return viewholder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        holder.image.setImageResource(arrayList.get(position).image);
-        holder.titleText.setText(arrayList.get(position).title);
-        holder.autorText.setText(arrayList.get(position).autor);
+        Book book = arrayList.get(position);
+        holder.image.setImageResource(R.drawable.ic_books2);
+        holder.titleText.setText(book.getTitle());
+        holder.autorText.setText(book.getAuthor());
     }
 
     @Override
