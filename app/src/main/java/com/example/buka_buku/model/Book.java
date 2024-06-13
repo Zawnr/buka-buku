@@ -8,12 +8,16 @@ public class Book implements Serializable {
     private String author;
     private String genre;
     private String cover;
+    private String description;
+    private String rating;
 
-    public Book(String title, String author, String genre) {
+    public Book(String title, String author, String genre, String cover, String description, String rating) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.cover = cover;
+        this.rating = rating;
+        this.description = description;
     }
 
     public Book() {}
@@ -56,5 +60,21 @@ public class Book implements Serializable {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }

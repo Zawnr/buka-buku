@@ -67,6 +67,6 @@ public class CheckoutActivity extends AppCompatActivity {
 
     public void loadDummyBooks() {
         books = new ArrayList<>();
-        books.add(new Book(getString(R.string.book_name), getString(R.string.book_author), getString(R.string.book_genre)));
+        books.add(new Book(getString(R.string.book_name), getString(R.string.book_author), getString(R.string.book_genre), "", "", ""));
     }
 }
