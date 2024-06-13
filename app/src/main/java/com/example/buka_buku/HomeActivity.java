@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         mAuth = FirebaseAuth.getInstance();
-        homeAdapter = new HomeAdapter(arrayList);
+        homeAdapter = new HomeAdapter(arrayList, HomeActivity.this);
         firebaseDatabase = FirebaseDatabase.getInstance("https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference();
 
