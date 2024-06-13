@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buka_buku.R;
 import com.example.buka_buku.model.Book;
 
 import java.util.List;
@@ -37,7 +36,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.ViewHo
         holder.genre.setText(book.getGenre());
 
         // Using a placeholder image from resources
-        holder.ic_cover.setImageResource(R.drawable.ic_books1);
+        holder.ic_cover.setImageResource(R.drawable.ic_books2);
     }
 
     @Override

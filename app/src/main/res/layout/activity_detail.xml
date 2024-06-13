@@ -24,7 +24,7 @@
             android:layout_marginLeft="20dp"
             android:background="@color/primary"
             android:padding="5dp"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_back2"
             android:contentDescription="Back" />
 
         <TextView
