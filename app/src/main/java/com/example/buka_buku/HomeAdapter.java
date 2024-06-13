@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.buka_buku.model.Book;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -31,9 +32,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Viewholder> {
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         Book book = arrayList.get(position);
-        holder.image.setImageResource(R.drawable.ic_books2);
         holder.titleText.setText(book.getTitle());
         holder.autorText.setText(book.getAuthor());
+        Glide.with(holder.image.getContext()).load(book.getCover()).into(holder.image);
     }
 
     @Override
