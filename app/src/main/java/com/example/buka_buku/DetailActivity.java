@@ -31,7 +31,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView bookTitle;
     private TextView bookAuthor;
     private ImageButton btnBack;
-    private Button btnBookmark;
+    private Button btnWishlist;
+    private Button btnBuy;
     private TextView bookDescription;
     private TextView bookRating;
     private TextView bookGenre;
@@ -56,7 +57,8 @@ public class DetailActivity extends AppCompatActivity {
         bookDescription = findViewById(R.id.description);
         bookRating = findViewById(R.id.rating);
         bookGenre = findViewById(R.id.genre);
-        btnBookmark = findViewById(R.id.btn_wishlist);
+        btnWishlist = findViewById(R.id.btn_wishlist);
+        btnBuy = findViewById(R.id.btn_buy);
 
         databaseReference = FirebaseDatabase.getInstance("https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -72,10 +74,19 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        btnBookmark.setOnClickListener(new View.OnClickListener() {
+        btnWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkAndAddToWishlist(book);
+            }
+        });
+
+        btnBuy.setOnClickListener(new View.OnClickListener() { // Add this listener
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailActivity.this, CheckoutActivity.class);
+                intent.putExtra("book", book);
+                startActivity(intent);
             }
         });
 
@@ -128,4 +139,6 @@ public class DetailActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+
 }
