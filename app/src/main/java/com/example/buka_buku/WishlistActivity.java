@@ -1,5 +1,6 @@
 package com.example.buka_buku;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,11 +24,11 @@ import java.util.List;
 
 public class WishlistActivity extends AppCompatActivity {
 
-    private ImageButton btnBack;
-    private ImageButton btnCheckout;
-    private RecyclerView rvWishlist;
-    private WishlistAdapter wishlistAdapter;
-    private List<Book> wishlistItems;
+    ImageButton btnBack;
+    ImageButton btnCheckout;
+    RecyclerView rvWishlist;
+    WishlistAdapter wishlistAdapter;
+    List<Book> wishlistItems;
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
 
@@ -62,9 +63,9 @@ public class WishlistActivity extends AppCompatActivity {
         });
 
         btnCheckout.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                Toast.makeText(WishlistActivity.this, "Checkout button clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(WishlistActivity.this, CheckoutActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -88,6 +89,8 @@ public class WishlistActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Handle possible errors
+
+                Toast.makeText(WishlistActivity.this, "Failed to load wishlist books", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -10,6 +10,7 @@ public class Book implements Serializable {
     private String cover;
     private String description;
     private String rating;
+    private boolean selected;
 
     public Book(String title, String author, String genre, String cover, String description, String rating) {
         this.title = title;
@@ -76,5 +77,12 @@ public class Book implements Serializable {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
