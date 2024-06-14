@@ -11,13 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.buka_buku.model.Book;
+
 import java.util.List;
 
 public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder> {
 
-    private List<WishlistItem> wishlistItems;
+    private List<Book> wishlistItems;
 
-    public WishlistAdapter(List<WishlistItem> wishlistItems) {
+    public WishlistAdapter(List<Book> wishlistItems) {
         this.wishlistItems = wishlistItems;
     }
 
@@ -30,10 +32,8 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
 
     @Override
     public void onBindViewHolder(@NonNull WishlistViewHolder holder, int position) {
-        WishlistItem item = wishlistItems.get(position);
-        holder.checkBox.setChecked(item.isChecked());
-        holder.bookCover.setImageResource(item.getBookCoverResource());
-        holder.bookTitle.setText(item.getBookTitle());
+        Book item = wishlistItems.get(position);
+        holder.bookTitle.setText(item.getTitle());
         holder.genre.setText(item.getGenre());
         holder.author.setText(item.getAuthor());
 
@@ -49,12 +49,12 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
             }
         });
 
-        holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            int currentPosition = holder.getAdapterPosition();
-            if (currentPosition != RecyclerView.NO_POSITION) {
-                wishlistItems.get(currentPosition).setChecked(isChecked);
-            }
-        });
+//        holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+//            int currentPosition = holder.getAdapterPosition();
+////            if (currentPosition != RecyclerView.NO_POSITION) {
+////                wishlistItems.get(currentPosition).setChecked(isChecked);
+////            }
+//        });
     }
 
     @Override
@@ -63,8 +63,8 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
     }
 
     public static class WishlistViewHolder extends RecyclerView.ViewHolder {
-        CheckBox checkBox;
-        ImageView bookCover;
+//        CheckBox checkBox;
+//        ImageView bookCover;
         TextView bookTitle;
         TextView genre;
         TextView author;
@@ -72,8 +72,8 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
 
         public WishlistViewHolder(@NonNull View itemView) {
             super(itemView);
-            checkBox = itemView.findViewById(R.id.checkBox);
-            bookCover = itemView.findViewById(R.id.book_cover);
+//            checkBox = itemView.findViewById(R.id.checkBox);
+//            bookCover = itemView.findViewById(R.id.book_cover);
             bookTitle = itemView.findViewById(R.id.book_title);
             genre = itemView.findViewById(R.id.genre);
             author = itemView.findViewById(R.id.author);
