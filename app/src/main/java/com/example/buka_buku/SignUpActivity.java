@@ -19,11 +19,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.buka_buku.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -31,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
     private Button btSignup;
     private TextView txSignin;
     private FirebaseAuth cAuth;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         btSignup = (Button) findViewById(R.id.btSignUp);
         txSignin = (TextView) findViewById(R.id.txSignIn);
         cAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance("https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
 
         btSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         if (user != null) {
-            Intent intent = new Intent(SignUpActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
             startActivity(intent);
         } else {
             Toast.makeText(this, "Please SignIn First!", Toast.LENGTH_SHORT).show();
@@ -129,6 +134,7 @@ public class SignUpActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = cAuth.getCurrentUser();
+                            writeNewUser(user.getUid(), etUsername.getText().toString(), email, "", "");
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -138,5 +144,10 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void writeNewUser(String userId, String name, String email, String studentId, String phoneNumber) {
+        User user = new User(name, email, studentId, phoneNumber);
+        databaseReference.child("users").child(userId).setValue(user);
     }
 }

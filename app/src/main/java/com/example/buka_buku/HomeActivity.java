@@ -1,6 +1,9 @@
 package com.example.buka_buku;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -30,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<Book> arrayList = new ArrayList<>();
 
     HomeAdapter homeAdapter;
+    ImageButton icWishlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +47,22 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         mAuth = FirebaseAuth.getInstance();
-        homeAdapter = new HomeAdapter(arrayList);
+        homeAdapter = new HomeAdapter(arrayList, HomeActivity.this);
         firebaseDatabase = FirebaseDatabase.getInstance("https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference();
+        icWishlist = findViewById(R.id.ic_wishlist);
 
         recyclerView = findViewById(R.id.recyler_view_home);
         recyclerView.setAdapter(homeAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
+        icWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, WishlistActivity.class);
+                startActivity(intent);
+            }
+        });
 
         loadNotes();
     }

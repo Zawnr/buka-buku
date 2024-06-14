@@ -11,6 +11,7 @@ googleServices = "4.4.2"
 firebaseAuth = "23.0.0"
 firebaseDatabase = "21.0.0"
 firebaseStorage = "21.0.0"
+googleGmsGoogleServices = "4.4.2"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -27,4 +28,5 @@ firebase-storage = { group = "com.google.firebase", name = "firebase-storage", v
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
