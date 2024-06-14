@@ -57,7 +57,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/img_buku1" />
+                android:layout_marginHorizontal="24dp"
+                android:src="@drawable/img_buku1"
+                android:scaleType="fitCenter"/>
 
             <TextView
                 android:id="@+id/title"
