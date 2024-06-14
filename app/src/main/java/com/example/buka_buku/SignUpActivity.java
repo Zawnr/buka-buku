@@ -79,7 +79,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         if (user != null) {
-            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, ProfileActivity.class);
             startActivity(intent);
         } else {
             Toast.makeText(this, "Please SignIn First!", Toast.LENGTH_SHORT).show();

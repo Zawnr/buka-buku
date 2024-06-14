@@ -8,10 +8,20 @@ public class User implements Serializable {
     private String studentId;
     private String phoneNumber;
 
+    public User() {
+    }
+
+
     public User(String name, String email, String studentId, String phoneNumber) {
         this.name = name;
         this.email = email;
         this.studentId = studentId;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(String name, String email, String phoneNumber) {
+        this.name = name;
+        this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
