@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.buka_buku.model.Book;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.ViewHo
         holder.genre.setText(book.getGenre());
 
         // Using a placeholder image from resources
-        holder.ic_cover.setImageResource(R.drawable.ic_books2);
+        Glide.with(holder.ic_cover.getContext()).load(book.getCover()).into(holder.ic_cover);
     }
 
     @Override

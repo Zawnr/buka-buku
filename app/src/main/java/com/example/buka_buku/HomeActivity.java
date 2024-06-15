@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
 
     HomeAdapter homeAdapter;
     ImageButton icWishlist;
+    ImageButton icProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class HomeActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference();
         icWishlist = findViewById(R.id.ic_wishlist);
+        icProfile = findViewById(R.id.ic_profile_user);
 
         recyclerView = findViewById(R.id.recyler_view_home);
         recyclerView.setAdapter(homeAdapter);
@@ -60,6 +62,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, WishlistActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        icProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });

@@ -132,4 +132,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="688dp"
+        android:background="@drawable/button_secondary"
+        android:fontFamily="@font/body"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

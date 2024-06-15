@@ -12,7 +12,12 @@
           "package_name": "com.example.buka_buku"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "7818381174-df6k9k2f7qp8t3lqa70sdbvjuu51os33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB3DMzvL1wZ65qcqnQAKrky739rPI2npfs"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7818381174-df6k9k2f7qp8t3lqa70sdbvjuu51os33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
