@@ -19,6 +19,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -50,10 +53,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private CircleImageView profilePic;
     private String ImageUrls;
     private EditText userName;
-    private EditText tvEmail;
+    private TextView tvEmail;
     private EditText tvPhoneNumber;
     Button btn_save;
     FirebaseUser currentUser;
+    ImageView icBack;
+    Button btn_logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +70,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         profilePic = findViewById(R.id.profile_image);
         tvEmail = findViewById(R.id.et_email);
         tvPhoneNumber = findViewById(R.id.et_phone);
+        icBack = findViewById(R.id.ic_back);
+
+        icBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_save.setOnClickListener(this);
 
@@ -73,6 +87,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         String url = "https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/";
         dbRef = FirebaseDatabase.getInstance(url).getReference("users");
         storageRef = FirebaseStorage.getInstance().getReference();
+        btn_logout = findViewById(R.id.btn_logout);
+
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(ProfileActivity.this, SignInActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
 
         if (mAuth.getCurrentUser() != null) {
             FirebaseUser currentUser = mAuth.getCurrentUser();

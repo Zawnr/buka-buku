@@ -6,4 +6,5 @@
     <string name="remove_book">Remove book</string>
     <string name="back_button">Go Back</string>
     <string name="checkout_button">Proceed to Checkout</string>
+    <string name="default_web_client_id">7818381174-df6k9k2f7qp8t3lqa70sdbvjuu51os33.apps.googleusercontent.com</string>
 </resources>

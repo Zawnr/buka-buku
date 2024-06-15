@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +66,7 @@ public class WishlistActivity extends AppCompatActivity {
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(WishlistActivity.this, CheckoutActivity.class);
+                intent.putExtra("wishlistItems", (Serializable) wishlistItems);
                 startActivity(intent);
             }
         });
