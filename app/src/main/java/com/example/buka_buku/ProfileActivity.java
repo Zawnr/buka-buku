@@ -19,12 +19,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.text.Editable;
-import android.text.TextWatcher;
 
 import com.bumptech.glide.Glide;
 import com.example.buka_buku.model.User;
@@ -44,7 +41,7 @@ import com.google.firebase.storage.UploadTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "ProfileActivity";
     private FirebaseAuth mAuth;
@@ -55,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private EditText userName;
     private TextView tvEmail;
     private EditText tvPhoneNumber;
+    private TextView tvName;  // Declare tvName
     Button btn_save;
     FirebaseUser currentUser;
     ImageView icBack;
@@ -64,12 +62,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-//        Button btEditProfile = findViewById(R.id.btn_edit);
+
         btn_save = findViewById(R.id.btn_save);
         userName = findViewById(R.id.et_name);
         profilePic = findViewById(R.id.profile_image);
         tvEmail = findViewById(R.id.et_email);
         tvPhoneNumber = findViewById(R.id.et_phone);
+        tvName = findViewById(R.id.tv_name);  // Initialize tvName
         icBack = findViewById(R.id.ic_back);
 
         icBack.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +80,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         });
 
         btn_save.setOnClickListener(this);
-
 
         mAuth = FirebaseAuth.getInstance();
         String url = "https://buka-buku-919aa-default-rtdb.asia-southeast1.firebasedatabase.app/";
@@ -145,6 +143,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                             userName.setText(username);
                             tvEmail.setText(email);
                             tvPhoneNumber.setText(phoneNumber);
+                            tvName.setText(username);  // Set tvName initially
                         }
                     } else {
                         Toast.makeText(ProfileActivity.this, "Data pengguna tidak ditemukan", Toast.LENGTH_SHORT).show();
@@ -156,32 +155,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     Toast.makeText(ProfileActivity.this, "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-
-//            btn_save.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-////                    String newUserName = userName.getText().toString();
-////                    String emails = tvEmail.getText().toString();
-////                    String phone = tvPhoneNumber.getText().toString();
-////                    User user = new User (newUserName,emails,phone);
-////                    String userId = currentUser.getUid();
-////
-////                    userRef.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-////                        @Override
-////                        public void onSuccess(Void aVoid) {
-////                            Toast.makeText(ProfileActivity.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
-////                        }
-////                    }).addOnFailureListener(new OnFailureListener() {
-////                        @Override
-////                        public void onFailure(@NonNull Exception e) {
-////                            Toast.makeText(ProfileActivity.this, "Failed to update Profile", Toast.LENGTH_SHORT).show();
-////                        }
-////                    });
-//                }
-//            });
-
-
-
         }
     }
 
@@ -284,12 +257,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             String newUserName = userName.getText().toString();
             String emails = tvEmail.getText().toString();
             String phone = tvPhoneNumber.getText().toString();
-            User user = new User (newUserName,emails,phone);
+            User user = new User(newUserName, emails, phone);
 
             userRef.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Toast.makeText(ProfileActivity.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                    // Update the TextView tv_name with the new user name
+                    tvName.setText(newUserName);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
