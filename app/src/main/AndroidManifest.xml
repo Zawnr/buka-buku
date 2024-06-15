@@ -49,6 +49,9 @@
             android:name=".SignInActivity"
             android:exported="false" />
         <activity
+            android:name=".CheckoutStatusActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false">
         </activity>
