@@ -94,6 +94,7 @@
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:paddingStart="20dp"
+        android:paddingVertical="15dp"
         android:textColorHint="@color/secondary"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/et_phone"
